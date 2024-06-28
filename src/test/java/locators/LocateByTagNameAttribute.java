@@ -1,7 +1,6 @@
 package locators;
 
-import java.util.List;
-
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +10,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import java.util.List;
 
 public class LocateByTagNameAttribute {
 
@@ -20,8 +19,8 @@ public class LocateByTagNameAttribute {
 
 	@BeforeSuite
 	public void startChromeBrowser() {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		ChromeDriver driver = new ChromeDriver();
+		this.driver = driver;
 		driver.manage().window().maximize(); // Maximize the screen
 	}
 
